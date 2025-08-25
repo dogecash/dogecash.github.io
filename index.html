@@ -1,63 +1,62 @@
 <!DOCTYPE html>
+
 <html lang="en">
+<!-- ================= HEAD: Meta, SEO, Fonts, Theme & Styles ================= -->
 <head>
-  <!-- ===== META / HEAD ===== -->
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>DOGECASH — The Underdog Returns</title>
-  <meta name="description" content="Dogecash relaunch: downloads, exchanges, live markets, learn tabs, developer docs, specs, and timeline."/>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="DOGECASH — The Underdog Returns"/>
-  <meta property="og:description" content="Native blockchain coin • community-first relaunch with transparent governance."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="https://dogecash.io/og.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:url" content="https://dogecash.io/"/>
-  <meta property="og:site_name" content="DogeCash"/>
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="DOGECASH — The Underdog Returns"/>
-  <meta name="twitter:description" content="Native blockchain coin • community-first relaunch with transparent governance."/>
-  <meta name="twitter:image" content="https://dogecash.io/og.png"/>
-
-  <!-- Theme / color scheme -->
-  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)"/>
-  <meta name="theme-color" content="#f4f7ff" media="(prefers-color-scheme: light)"/>
-  <meta name="color-scheme" content="dark light"/>
-
-  <!-- PWA / Manifest -->
-  <link rel="manifest" href="site.webmanifest" crossorigin="use-credentials"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
-
-  <!-- Canonical / SEO -->
-  <link rel="canonical" href="https://dogecash.io/"/>
-  <meta name="robots" content="index,follow"/>
-  <meta name="referrer" content="strict-origin-when-cross-origin"/>
-
-  <!-- Content Security Policy (updated to allow jsdelivr for particles.js) -->
-  <meta http-equiv="Content-Security-Policy" content="
+<!-- ===== FONTS (preload then swap) ===== -->
+<!-- ===== META / HEAD ===== -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>DOGECASH — The Underdog Returns</title>
+<meta content="Dogecash relaunch: downloads, exchanges, live markets, learn tabs, developer docs, specs, and timeline." name="description"/>
+<!-- Open Graph -->
+<meta content="DOGECASH — The Underdog Returns" property="og:title"/>
+<meta content="Native blockchain coin • community-first relaunch with transparent governance." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://dogecash.io/og.png" property="og:image"/>
+<meta content="DogeCash logo and brand graphic" property="og:image:alt"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="https://dogecash.io/" property="og:url"/>
+<meta content="DogeCash" property="og:site_name"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="DOGECASH — The Underdog Returns" name="twitter:title"/>
+<meta content="Native blockchain coin • community-first relaunch with transparent governance." name="twitter:description"/>
+<meta content="https://dogecash.io/og.png" name="twitter:image"/>
+<!-- Theme / color scheme -->
+<meta content="#0b1220" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="#f4f7ff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<!-- PWA / Manifest -->
+<link crossorigin="use-credentials" href="site.webmanifest" rel="manifest"/>
+<meta content="DogeCash" name="apple-mobile-web-app-title"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Icons -->
+<link href="assets/DogeCashLogoFlat.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="assets/DogeCashLogoFlat.png" rel="apple-touch-icon"/>
+<!-- Canonical / SEO -->
+<link href="https://dogecash.io/" rel="canonical"/>
+<meta content="index,follow" name="robots"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<!-- Content Security Policy (allows jsdelivr for particles.js & CoinGecko API) -->
+<meta content="
     default-src 'self';
     img-src 'self' data: https://assets.coingecko.com https://static.coingecko.com https://dogecash.io;
     connect-src 'self' https://api.coingecko.com https://www.coingecko.com https://coingecko.com;
-    script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
+    script-src 'self' https://cdn.jsdelivr.net 'nonce-ABC123';
     style-src 'self' 'unsafe-inline';
     font-src 'self' data:;
     frame-src 'self';
     base-uri 'self';
-    form-action 'self';">
-
-  <!-- Performance hints -->
-  <link rel="preconnect" href="https://api.coingecko.com" crossorigin>
-  <link rel="dns-prefetch" href="https://api.coingecko.com"/>
-  <link rel="icon" href="assets/DogecashLogo.png" type="image/png"/>
-  <link rel="prefetch" as="document" href="DogeCash_WhitePaper.pdf" type="application/pdf"/>
-
-  <!-- ===== THEME / BASE STYLES (merged + enhanced) ===== -->
-  <style>
+    form-action 'self';" http-equiv="Content-Security-Policy"/>
+<!-- Performance hints -->
+<link crossorigin="" href="https://api.coingecko.com" rel="preconnect"/>
+<link href="https://api.coingecko.com" rel="dns-prefetch"/>
+<link as="document" href="DogeCash_WhitePaper.pdf" rel="prefetch" type="application/pdf"/>
+<!-- ===== THEME / BASE STYLES (merged + enhanced) ===== -->
+<style nonce="ABC123">
     :root{
       --bg:#0b1220; --bg-soft:#111a33; --text:#e6eef6; --muted:#a9b4c6;
       --accent:#ffb86b; --accent-2:#6bdcff; --card:rgba(255,255,255,.03);
@@ -80,6 +79,38 @@
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline; text-underline-offset:2px}
 
+    /* Scroll progress */
+    .scroll-progress{
+      position:fixed;top:0;left:0;height:3px;width:0;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      z-index:99999; box-shadow:0 0 12px rgba(0,0,0,.35);
+    }
+
+    /* Sticky topbar nav (from patch) */
+    .topbar{
+      position:sticky; top:0; z-index:9999;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:rgba(11,18,32,.55);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    :root.light .topbar{ background:rgba(255,255,255,.65); border-bottom:1px solid var(--border);}
+    nav{
+      max-width:1100px;margin:auto;padding:10px 20px;display:flex;align-items:center;gap:14px;
+    }
+    .brand-mark{height:64px;width:64px;border-radius:14px;box-shadow:var(--shadow);background:#0b1220; transition: transform 1s ease;}
+    .nav-links{margin-left:auto;display:flex;gap:10px;align-items:center}
+    .nav-links a{padding:8px 10px;border-radius:10px}
+    .nav-links a:hover{background:rgba(255,255,255,.06)}
+    .cta{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:var(--on-accent); font-weight:800; border:0;
+      box-shadow:0 8px 20px rgba(0,0,0,.25);
+      transition:transform .2s,box-shadow .2s;
+    }
+    .cta:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(0,0,0,.35)}
+    .hamburger{display:none;background:transparent;border:1px solid var(--border);border-radius:10px;padding:8px 10px;color:var(--text)}
+    @media (max-width:900px){ .nav-links{display:none} .hamburger{display:inline-flex;margin-left:auto} }
+
     /* Animated gradient header + particle layer */
     .header-wrap {
       position: relative;
@@ -87,32 +118,37 @@
       background: linear-gradient(-45deg, #6bdcff, #ffb86b, #0d1326, #0b1220);
       background-size: 400% 400%;
       animation: gradientShift 15s ease infinite;
-      border-bottom:1px solid var(--border);
+      /* seamless, no border */
+      border-bottom: none;
+    }
+    .header-wrap::after{
+      content:""; position:absolute; inset:-20% -10%;
+      background:
+        radial-gradient(60rem 30rem at 15% 10%, rgba(107,220,255,.18), transparent 60%),
+        radial-gradient(40rem 22rem at 85% 20%, rgba(255,184,107,.18), transparent 60%),
+        radial-gradient(30rem 18rem at 60% 80%, rgba(27,103,255,.14), transparent 60%);
+      mix-blend-mode:screen; pointer-events:none; z-index:0;
+      filter: blur(2px);
     }
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    #particles-js {
-      position: absolute; inset: 0; z-index: 0; pointer-events: none;
-    }
+    
 
-    header{max-width:1100px;margin:auto;padding:28px 20px;display:flex;align-items:center;gap:18px; position:relative; z-index:1;
-      backdrop-filter: blur(10px);
-      background-color: rgba(11, 18, 32, 0.45);
-      border-radius: 0 0 16px 16px;
-      transition: background-color .3s ease;
+    header{
+      max-width:1100px;margin:auto;padding:28px 20px;display:flex;align-items:center;gap:18px;
+      position:relative; z-index:1; backdrop-filter: blur(10px);
+      background-color: rgba(11, 18, 32, 0.45); border-radius: 0 0 16px 16px; transition: background-color .3s ease;
     }
     :root.light header{ background-color: rgba(255,255,255,0.65); }
-    .brand-mark{height:64px;width:64px;border-radius:14px;box-shadow:var(--shadow);background:#0b1220; transition: transform 1s ease;}
-    #logoImg:hover { transform: rotateY(360deg); }
+
     .branding h1{margin:0 0 6px 0;letter-spacing:.2px}
     .branding p{margin:0;color:var(--muted)}
     .header-actions{margin-left:auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.04)}
     :root.light .badge{ background: rgba(27,103,255,.08); border-color: var(--border); }
-
     .theme-toggle{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:var(--card);cursor:pointer}
     .theme-toggle input{accent-color:var(--accent)}
 
@@ -183,13 +219,6 @@
       html { scroll-behavior: auto; }
     }
 
-    @media (prefers-color-scheme: light) {
-      :root:not(.light):not(.dark) {
-        --bg:#f4f7ff; --bg-soft:#ffffff; --text:#0a1326; --muted:#3b4a61;
-        --accent:#1b67ff; --accent-2:#2f7dff; --card:#ffffff; --border:#b7c6ff;
-        --shadow:0 8px 22px rgba(27,103,255,.12); --on-accent:#ffffff;
-      }
-    }
 
     .whitepaper-frame { border:1px solid var(--border); border-radius:10px; }
     .api-status { margin-top:8px; font-size:.9rem; color:var(--muted); }
@@ -227,480 +256,986 @@
     .meme-lightbox.open { display:flex; animation: popIn .3s ease-out; }
     .meme-lightbox img { max-width:92vw; max-height:88vh; border-radius:12px; }
     @keyframes popIn { from { opacity:0; transform: scale(0.95);} to { opacity:1; transform: scale(1);} }
-  </style>
+
+    /* Logo spin animation */
+    @keyframes spinOnce { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    #logoImg.spin-once { animation: spinOnce 1s ease; }
+  
+    /* Specific style for Join Discord button only */
+    a.cta[href*="discord"] {
+      background: linear-gradient(90deg, #7289DA, #5865F2); /* Discord brand colors */
+      color: #fff;
+    }
+
+
+:target::before {
+  content: "";
+  display: block;
+  height: 90px; /* height of sticky header */
+  margin-top: -90px;
+  visibility: hidden;
+}
+
+
+section {
+  scroll-margin-top: 96px; /* matches sticky header height */
+}
+
+</style>
+<!-- Structured data -->
+<script nonce="ABC123" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DogeCash",
+    "url": "https://dogecash.io/",
+    "logo": "https://dogecash.io/assets/DogecashLogo.png",
+    "sameAs": [
+      "https://twitter.com/dogecash",
+      "https://discord.gg/your-invite",
+      "https://github.com/dogecash"
+    ]
+  }
+  </script>
+<!-- Analytics (plausible) -->
+<script nonce="ABC123" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Relaunch Checklist — Week 1",
+  "description": "Site live with downloads, live markets, Learn tabs, and theme toggle.",
+  "datePublished": "2025-08-10",
+  "author": {
+    "@type": "Organization",
+    "name": "DogeCash"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DogeCash",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dogecash.io/assets/DogecashLogo.png"
+    }
+  }
+}
+</script>
+<!-- WIN11 OVERRIDES START -->
+<style nonce="ABC123" id="win11-overrides">
+  :root{
+    --win-accent:#0078D4;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-xl: 20px;
+    --shadow: 0 4px 12px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.06);
+  }
+  @media (prefers-contrast: more){
+    :root{ --border:#8aa6ff; }
+    .btn-ghost, .tabbtn, .badge { border-width:2px }
+  }
+
+  html,body{ transition: background .4s ease, color .4s ease; }
+
+  /* Glassy topbar */
+  .topbar{
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    backdrop-filter: saturate(160%) blur(16px);
+    background: rgba(11,18,32,.45);
+  }
+  :root.light .topbar{ background: rgba(255,255,255,.55); }
+
+  /* Header glass */
+  header{
+    backdrop-filter: blur(16px) saturate(160%);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    transition: background-color .3s ease, backdrop-filter .3s ease;
+  }
+
+  /* Cards → Fluent/Mica style */
+  .card{
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px) saturate(160%);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: transform .2s ease, border-color .2s ease, background .3s ease, backdrop-filter .3s ease;
+  }
+  :root.light .card{ background: rgba(255,255,255,.65); }
+  .card:hover { transform: translateY(-1px); border-color: var(--win-accent); }
+
+  /* Buttons + links */
+  .btn, .btn-ghost, .tabbtn, .pill, .nav-links a { border-radius: var(--radius-md); }
+  .btn:hover, .btn:focus-visible { transform: translateY(-1px) scale(1.02); filter: brightness(1.05); }
+  .btn-ghost:hover, .btn-ghost:focus-visible{ background: rgba(27,103,255,.08); border-color: var(--win-accent); transform: scale(1.02); }
+
+  /* Tabs underline animation */
+  .tabbtn.active{ position: relative; }
+  .tabbtn.active::after{
+    content:""; position:absolute; left:10%; right:10%; bottom:-4px; height:3px; border-radius:2px; background: var(--win-accent);
+    animation: tabUnder .25s ease;
+  }
+  @keyframes tabUnder{ from{opacity:0; transform:scaleX(0);} to{opacity:1; transform:scaleX(1);} }
+
+  /* Join Discord keeps brand gradient */
+  a.cta[href*="discord"] {
+    background: linear-gradient(90deg, #7289DA, #5865F2);
+    color: #fff;
+  }
+
+/* ===== macOS 26 Visual Enhancements ===== */
+:root {
+  --mac-glass-bg-dark: rgba(20, 20, 20, 0.6);
+  --mac-glass-bg-light: rgba(255, 255, 255, 0.55);
+  --mac-radius-xl: 24px;
+  --mac-radius-md: 16px;
+  --mac-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.topbar,
+header,
+.card,
+.img-frame,
+.tabbtn,
+.btn,
+.btn-ghost,
+.badge {
+  border-radius: var(--mac-radius-md) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  box-shadow: var(--mac-shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+header,
+.topbar {
+  border-radius: 0 0 var(--mac-radius-xl) var(--mac-radius-xl) !important;
+}
+
+.card:hover {
+  transform: scale(1.015);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.btn:hover,
+.tabbtn:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* Scrollbar enhancements */
+</style>
+
+<!-- WIN11 OVERRIDES END -->
+<style nonce="ABC123" id="macos26-visual-overhaul">
+/* ===== macOS 26 Full Visual Overhaul ===== */
+:root {
+  --mac-glass-bg: rgba(255, 255, 255, 0.55);
+  --mac-dark-bg: rgba(20, 20, 20, 0.6);
+  --mac-glow: 0 0 16px rgba(255, 255, 255, 0.15);
+  --mac-radius: 22px;
+  --mac-shadow-xl: 0 12px 28px rgba(0,0,0,.2);
+}
+
+/* Layout glow + floaty visuals */
+.card,
+header,
+.topbar,
+.tabbtn,
+.btn,
+.btn-ghost,
+.img-frame {
+  border-radius: var(--mac-radius);
+  box-shadow: var(--mac-shadow-xl);
+  backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Topbar glass */
+.topbar {
+  background: var(--mac-dark-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Cards hover lift effect */
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.3);
+}
+
+/* Buttons */
+.btn, .btn-ghost {
+  padding: 12px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn:hover, .btn-ghost:hover {
+  transform: scale(1.04);
+  filter: brightness(1.1);
+}
+
+/* Tabs glowing underline */
+.tabbtn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 12%;
+  width: 76%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: var(--mac-glow);
+}
+
+/* Scrollbar visuals */
+</style>
+<style nonce="ABC123" id="advanced-enhancements-css">
+/* === UX & Visual Polish === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.scroll-reveal {
+  will-change: opacity, transform;
+}
+
+/* Animated gradient border on active elements */
+.btn:focus-visible, .tabbtn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(107, 220, 255, 0.4);
+}
+
+/* Copy feedback bubble */
+.copy-feedback {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  background: #19c37d;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.copy-feedback.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced scrollbars */
+</style>
+<style nonce="ABC123">/* Custom scrollbar only */
+</style>
+<style nonce="ABC123">:root.light .tabbtn.active,
+:root.light .tabbtn.active *,
+:root.light #learn .panel.active,
+:root.light #learn .panel.active *,
+:root.light #learn .panel *,
+:root.light .tabbtn *,
+:root.light .tabbtn {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  text-shadow: none !important;
+}</style><style nonce="ABC123">
+/* Input suffix rendering (keeps numeric value clean while visually showing code) */
+.input-wrap { position: relative; display: inline-flex; align-items: center; }
+.input-wrap input { padding-right: 64px; }
+.input-wrap::after {
+  content: attr(data-suffix);
+  position: absolute;
+  right: 12px;
+  font-weight: 600;
+  opacity: .75;
+  pointer-events: none;
+}
+</style><style nonce="ABC123">
+/* Hide number input spinners for all browsers */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style><style nonce="ABC123">
+.input-wrap {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  overflow: hidden;
+  padding: 0;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.input-wrap:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(107, 220, 255, 0.25);
+}
+.input-wrap select,
+.input-wrap input {
+  border: none;
+  background: transparent;
+  padding: 12px 16px;
+  font-size: 1rem;
+  outline: none;
+  appearance: none;
+  color: var(--text);
+}
+.input-wrap select {
+  min-width: 100px;
+  border-right: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 28px;
+  cursor: pointer;
+}
+.input-wrap input {
+  flex: 1;
+  min-width: 160px;
+}
+.input-wrap:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+</style><style nonce="ABC123">
+#convert .input-wrap {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+#convert .input-wrap:focus-within {
+  outline: none !important;
+}
+#convert select,
+#convert input {
+  border-radius: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+#convert .input-wrap:hover {
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+}
+</style>
+<style nonce="ABC123" id="fedora-visual-style">
+:root {
+  --border: rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --font-sans: "Cantarell", system-ui, sans-serif;
+}
+
+html, body {
+  font-family: var(--font-sans);
+}
+
+.card,
+header,
+.topbar,
+.tabbtn,
+.btn,
+.btn-ghost,
+.img-frame {
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.btn,
+.tabbtn {
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover,
+.tabbtn:hover {
+}
+
+.tabbtn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.theme-toggle,
+.badge {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+input, select {
+  font-family: var(--font-sans);
+}
+
+
+</style>
+<style nonce="ABC123">
+@media (max-width: 900px) {
+  .hamburger {
+    background: var(--accent);
+    color: var(--on-accent);
+    font-weight: bold;
+  }
+}
+</style><meta content="camera=(), microphone=(), geolocation=(), usb=(), payment=(), serial=()" name="permissions-policy"/><style nonce="ABC123">
+.table-container { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 900px) {
+  #marketsTable th, #marketsTable td { white-space: nowrap; }
+  #marketsTable { font-size: 0.9rem; }
+}
+</style><style nonce="ABC123">
+/* Skip link (visible on keyboard focus only) */
+.skip-link { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus { position:fixed; left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
+  background: var(--card); border:1px solid var(--border); border-radius:10px; z-index:100000; }
+</style>
+<style nonce="ABC123">
+/* Consolidated scrollbar styles */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-clip: content-box;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--accent), var(--accent-2));
+}
+::-webkit-scrollbar-thumb:hover { filter: brightness(1.05); }
+</style>
+
+
+<script nonce="ABC123" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is DogeCash a token?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — DOGEC is a native coin with its own blockchain (not an ERC-20 token)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I get the wallet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From the official GitHub releases. Use the OS auto-detect button and verify SHA256."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I stake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Encrypt, then unlock for staking only, and keep the wallet online and synced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the treasury protected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Community multisig, public reports, open voting, and no single-party custody."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
+<!-- ================= BODY: Visible Content Starts Here ================= -->
 <body>
-  <!-- ===== HEADER / BRANDING ===== -->
-  <div class="header-wrap">
-    <div id="particles-js"></div>
-    <header role="banner">
-      <img alt="Dogecash Logo" class="brand-mark" fetchpriority="high" height="64" id="logoImg" src="" width="64"/>
-      <div class="branding">
-        <h1>DOGECASH — The Underdog Returns</h1>
-        <p class="muted">Native blockchain coin • community-first relaunch with transparent governance.</p>
-      </div>
-      <div class="header-actions">
-        <span aria-live="polite" class="badge" id="versionBadge">v5.5.1</span>
-        <label class="theme-toggle" title="Toggle theme">
-          <input aria-checked="false" aria-label="Toggle light theme" id="themeToggle" role="switch" type="checkbox"/>
-          <span>Light theme</span>
-        </label>
-      </div>
-    </header>
-  </div>
-
-  <!-- ===== MAIN CONTENT ===== -->
-  <main id="main" tabindex="-1" role="main">
-    <!-- ===== ANNOUNCEMENT ===== -->
-    <div aria-live="polite" class="card notice" role="status">
+<a class="skip-link" href="#main">Skip to main content</a>
+<!-- Scroll progress -->
+<div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
+<!-- Sticky glass nav (from patch) -->
+<div aria-label="Primary" class="topbar" role="navigation">
+<nav>
+<picture>
+<source srcset="assets/DogecashLogo.avif" type="image/avif"/>
+<source srcset="assets/DogecashLogo.webp" type="image/webp"/>
+<!-- Fallback SVG data; JS will progressive-replace with PNG if present -->
+<img alt="Dogecash Logo" class="brand-mark" fetchpriority="high" height="64" id="logoImg" src="data:image/svg+xml;utf8,&lt;?xml version='1.0'?&gt;&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' aria-hidden='true' role='img'&gt;&lt;defs&gt;&lt;linearGradient id='g' x1='0' x2='1' y1='0' y2='1'&gt;&lt;stop offset='0' stop-color='#6bdcff'/&gt;&lt;stop offset='1' stop-color='#ffb86b'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='64' height='64' rx='14' fill='#0b1220'/&gt;&lt;circle cx='32' cy='32' r='22' fill='url(#g)' opacity='0.25'/&gt;&lt;text x='32' y='38' font-family='system-ui,Segoe UI,Roboto,Arial' font-size='14' text-anchor='middle' fill='#e6eef6'&gt;DOGEC&lt;/text&gt;&lt;/svg&gt;" width="64"/>
+</picture>
+<div aria-label="Site" class="nav-links">
+<a href="#download">Download</a>
+<a href="#markets">Markets</a>
+<a href="#learn">Learn</a>
+<a href="#convert">Convert</a><a href="#wallet">Wallet</a>
+<a href="#blog">Updates</a>
+<a class="cta" href="https://discord.gg/your-invite" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">Join Discord</a>
+</div>
+<button aria-controls="mobileMenu" aria-expanded="false" class="hamburger" id="hamburger">☰ Menu</button>
+</nav>
+</div>
+<!-- Mobile menu -->
+<div class="card" id="mobileMenu" style="display:none; margin-top:8px">
+<div aria-label="Mobile navigation" class="btn-row" role="group">
+<a class="btn-ghost" href="#download">Download</a><a class="btn-ghost" href="#convert">Convert</a>
+<a class="btn-ghost" href="#markets">Markets</a>
+<a class="btn-ghost" href="#learn">Learn</a>
+<a class="btn-ghost" href="#wallet">Wallet</a>
+<a class="btn-ghost" href="#blog">Updates</a>
+<a class="cta" href="https://discord.gg/your-invite" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">Join Discord</a>
+</div>
+</div>
+<!-- Hero header -->
+<div class="header-wrap">
+<header role="banner">
+<div class="branding">
+<h1>DOGECASH — The Underdog Returns</h1>
+<p class="muted">Native blockchain coin • community-first relaunch with transparent governance.</p>
+</div>
+<div class="header-actions" style="margin-left:auto">
+<span aria-live="polite" class="badge" id="versionBadge">v5.5.1</span>
+<label class="theme-toggle" title="Toggle theme">
+<input aria-checked="false" aria-label="Toggle light theme" id="themeToggle" role="switch" type="checkbox"/>
+<span>Light theme</span>
+</label>
+</div>
+</header>
+</div>
+<!-- MAIN -->
+<main aria-label="Main content" id="main" role="main" tabindex="-1">
+<noscript><div class="notice">JavaScript is disabled — live prices/markets and some actions will show placeholders.</div></noscript>
+<!-- Announcement -->
+<div aria-live="polite" class="card notice" role="status">
       Heads up: The DogeCash App ceased services; withdrawal deadlines were March 16–28, 2025.
       See details on the official site:
-      <a href="https://dogecash.net/" target="_blank" rel="noopener noreferrer">dogecash.net</a>.
+      <a href="https://dogecash.net/" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">dogecash.net</a>.
     </div>
-
-    <!-- ===== DOWNLOAD SECTION ===== -->
-    <section aria-labelledby="download-h" class="card" id="download">
-      <h2 id="download-h">Download DogeCash Wallet</h2>
-      <div class="grid-2">
-        <div>
-          <p class="muted">
-            Installer auto-suggested for your OS. Always verify checksums/signatures before running.
-          </p>
-          <p>
-            <a class="btn" href="https://github.com/dogecash/dogecash/releases/tag/5.5.1" id="dlBtn" target="_blank" rel="noopener noreferrer">
+<!-- ===== DOWNLOAD SECTION (from original) ===== -->
+<section aria-labelledby="download-h" class="card" id="download">
+<h2 id="download-h">Download DogeCash Wallet</h2>
+<div class="grid-2">
+<div>
+<p class="muted">Installer auto-suggested for your OS. Always verify checksums/signatures before running.</p>
+<p>
+<a class="btn" href="https://github.com/dogecash/dogecash/releases/tag/5.5.1" id="dlBtn" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">
               Download for Your OS
             </a>
-          </p>
-          <p class="muted">
-            <small>
-              All assets:
-              <a href="https://github.com/dogecash/dogecash/releases/tag/5.5.1" id="allAssetsLink" target="_blank" rel="noopener noreferrer">
-                GitHub Release
-              </a>
-            </small>
-          </p>
-
-          <!-- Quick links -->
-          <div class="btn-row" aria-label="Quick links (downloads)">
-            <a class="btn-ghost" href="https://github.com/dogecash/dogecash/releases" target="_blank" rel="noopener noreferrer">GitHub Releases</a>
-            <a class="btn-ghost" href="https://www.coingecko.com/en/coins/dogecash" target="_blank" rel="noopener noreferrer">CoinGecko</a>
-            <a class="btn-ghost" href="https://coinmarketcap.com/currencies/dogecash/" target="_blank" rel="noopener noreferrer">CoinMarketCap</a>
-          </div>
-
-          <!-- Checksums -->
-          <details>
-            <summary><strong>SHA256 Checksums</strong> (click a hash to copy)</summary>
-            <table class="table" id="shaTable">
-              <thead>
-                <tr><th>File</th><th>SHA256</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>dogecash-5.5.1-win64.zip</td>
-                  <td class="muted">5E470328EE68750A2F6E86F75C83CECAEAC2AD973F5573B83DCB6E3156A91591</td>
-                </tr>
-                <tr>
-                  <td>dogecash-5.5.1-osx-unsigned.dmg</td>
-                  <td class="muted">A9B2E0AB2F72476CCF5CDB4746ADF9C9D1399321E8E6C02B5F6F47CC924D59B2</td>
-                </tr>
-                <tr>
-                  <td>dogecash-5.5.1-x86_64-linux-gnu.tar.gz</td>
-                  <td class="muted">DEAB49107E8930148E24BB922B3BEF6F009E3709D425619FF0044D121D7A02EF</td>
-                </tr>
-              </tbody>
-            </table>
-          </details>
-        </div>
-
-        <!-- RIGHT COLUMN: Live Price -->
-        <div>
-          <h3>Live Price</h3>
-          <div class="kv" aria-live="polite">
-            <div class="pill"><strong>USD</strong><div id="p_usd">—</div></div>
-            <div class="pill"><strong>24h</strong><div id="p_ch">—</div></div>
-            <div class="pill"><strong>Market Cap</strong><div id="p_mcap">—</div></div>
-            <div class="pill"><strong>24h Volume</strong><div id="p_vol">—</div></div>
-            <div class="pill"><strong>Circulating</strong><div id="p_circ">—</div></div>
-          </div>
-          <p class="api-status" id="priceStatus">Fetching price…</p>
-          <p class="muted">
-            Source: CoinGecko •
-            <a href="https://www.coingecko.com/en/coins/dogecash" target="_blank" rel="noopener noreferrer">View on CoinGecko</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SHARE SECTION ===== -->
-    <section aria-labelledby="share-heading" class="card" id="share">
-      <h2 id="share-heading">Share DOGECASH</h2>
-      <p class="muted">
-        Spread the word. Links use your current page &amp; title and respect your device’s native share where supported.
-      </p>
-      <div aria-label="Share buttons" class="share-row" role="group">
-        <a aria-label="Share on Facebook" class="btn-ghost" href="#" id="share-facebook" target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12.06C22 6.49 17.52 2 11.95 2S2 6.49 2 12.06c0 5.01 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.19 2.24.19v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.77l-.44 2.91h-2.33V22c4.78-.78 8.44-4.93 8.44-9.94Z"/></svg>
-          <span>Facebook</span>
-        </a>
-        <a aria-label="Share on X (Twitter)" class="btn-ghost" href="#" id="share-twitter" target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M13.8 10.7 20.9 2h-2.5l-6 7.2L8 2H2l7.6 11.2L2.6 22h2.5l6.5-7.8 4.7 7.8H22l-8.2-11.3Zm-2.3 2.8-.76-1.12L5 3.7h2.1l4.1 6 .76 1.12 6.1 8.9h-2.1l-4.46-6.02Z"/></svg>
-          <span>Share on X</span>
-        </a>
-        <a aria-label="Open Instagram profile" class="btn-ghost" href="https://instagram.com/" id="share-instagram" target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.75-3A1.25 1.25 0 1 1 16.5 7.75 1.25 1.25 0 0 1 17.75 6.5Z"/></svg>
-          <span>Instagram</span>
-        </a>
-        <a aria-label="Open TikTok profile" class="btn-ghost" href="https://www.tiktok.com/" id="share-tiktok" target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M15 3c.6 1.8 2 3.2 3.8 3.8V10a7 7 0 1 1-7-7h3.2Z"/></svg>
-          <span>TikTok</span>
-        </a>
-        <a aria-label="Share on Telegram" class="btn-ghost" href="#" id="share-telegram" target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 3.5 2.7 10.8c-1 .4-.9 1.8.2 2L8.7 14l8.7-7.9c.2-.2.6.1.4.3L10 15.2v4.6c0 1.1 1.3 1.6 2.1.9l3.2-2.8 3.9 1.3c.9.3 1.8-.3 2-1.2l2.3-12.6c.2-1-.7-1.8-1.6-1.5Z"/></svg>
-          <span>Telegram</span>
-        </a>
-        <a aria-label="Share on WhatsApp" class="btn-ghost" href="#" id="share-whatsapp" target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M20 3.9A10 10 0 0 0 3.6 17.6L3 21l3.5-.9A10 10 0 1 0 20 3.9Zm-8 .9a8.1 8.1 0 0 1 6.2 13.2c-.3.4-.9.5-1.4.3-.8-.3-1.8-.6-2.7-1-2.9-1.3-5.1-3.5-6.4-6.4-.4-.9-.7-1.9-1-2.7-.2-.5 0-1.1.3-1.4A8.1 8.1 0 0 1 12 4.8Z"/></svg>
-          <span>WhatsApp</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== MARKETS ===== -->
-    <section aria-labelledby="markets-h" class="card" id="markets">
-      <h2 id="markets-h">Where to Trade DOGEC (Live)</h2>
-      <div class="notice muted" id="marketsNote">
-        Data via CoinGecko tickers. Always verify liquidity, spreads, and official communities before trading.
-      </div>
-      <div class="btn-row" aria-label="Quick links (markets)">
-        <a class="btn" href="https://stakecube.net/app/exchange/doge_btc" target="_blank" rel="noopener noreferrer">StakeCube: DOGEC/BTC</a>
-        <a class="btn-ghost" href="https://www.coingecko.com/en/coins/dogecash#markets" target="_blank" rel="noopener noreferrer">CoinGecko Markets</a>
-        <a class="btn-ghost" href="https://coinmarketcap.com/currencies/dogecash/markets/" target="_blank" rel="noopener noreferrer">CMC Markets</a>
-      </div>
-
-      <table class="table" id="marketsTable" aria-describedby="marketsNote" role="table">
-        <caption class="visually-hidden">Live market pairs from CoinGecko</caption>
-        <thead>
-          <tr>
-            <th>Exchange</th>
-            <th>Pair</th>
-            <th>Price</th>
-            <th>Spread</th>
-            <th>Trust</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody aria-live="polite" aria-busy="true">
-          <tr><td class="muted" colspan="6">Loading live markets…</td></tr>
-        </tbody>
-      </table>
-      <p class="api-status" id="marketsStatus">Fetching markets…</p>
-    </section>
-
-    <!-- ===== WALLET PREVIEW ===== -->
-    <section aria-labelledby="wallet-h" class="card" id="wallet">
-      <h2 id="wallet-h">Wallet Preview</h2>
-      <div class="grid-2">
-        <div class="img-frame">
-          <img alt="Dogecash Desktop Wallet Preview" fetchpriority="low" height="768" id="walletImg" loading="lazy" src="" width="1365"/>
-        </div>
-        <div>
-          <ul>
-            <li><strong>Proof-of-Stake</strong> with unlock-for-staking-only</li>
-            <li><strong>Masternodes</strong> &amp; DAO voting</li>
-            <li><strong>Transaction history</strong> with filters &amp; memos</li>
-            <li><strong>Backups</strong> &amp; wallet encryption</li>
-            <li><strong>Diagnostics</strong> &amp; version info</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SPECS ===== -->
-    <section aria-labelledby="specs-h" class="card" id="specs">
-      <h2 id="specs-h">Coin Specifications</h2>
-      <div class="grid-3">
-        <div class="pill"><strong>Algorithm</strong><div>Quark</div></div>
-        <div class="pill"><strong>Block Time</strong><div>~60 sec</div></div>
-        <div class="pill"><strong>Difficulty</strong><div>Retarget every block</div></div>
-        <div class="pill"><strong>Total Supply</strong><div>21,000,000 DOGEC</div></div>
-        <div class="pill"><strong>Max Supply</strong><div>210,000,000 DOGEC</div></div>
-        <div class="pill"><strong>Privacy</strong><div>SHIELD (zk-SNARKs)</div></div>
-      </div>
-      <p class="muted">Circulating supply is ~18.8M (live via dashboard/CG).</p>
-    </section>
-
-    <!-- ===== LEARN ===== -->
-    <section aria-labelledby="learn-h" class="card" id="learn">
-      <h2 id="learn-h">Learn DOGEC</h2>
-
-      <div class="tabs" id="learnTabs" role="tablist" aria-label="Learn tabs">
-        <button role="tab" class="tabbtn active" id="tab-tech" aria-selected="true" aria-controls="tech" data-tab="tech">Technology</button>
-        <button role="tab" class="tabbtn" id="tab-staking" aria-selected="false" aria-controls="staking" data-tab="staking">Staking</button>
-        <button role="tab" class="tabbtn" id="tab-masternodes" aria-selected="false" aria-controls="masternodes" data-tab="masternodes">Masternodes</button>
-        <button role="tab" class="tabbtn" id="tab-gov" aria-selected="false" aria-controls="gov" data-tab="gov">Governance</button>
-        <button role="tab" class="tabbtn" id="tab-econ" aria-selected="false" aria-controls="econ" data-tab="econ">Economics</button>
-        <button role="tab" class="tabbtn" id="tab-roadmap" aria-selected="false" aria-controls="roadmap" data-tab="roadmap">Roadmap</button>
-        <button role="tab" class="tabbtn" id="tab-faq" aria-selected="false" aria-controls="faq" data-tab="faq">FAQ</button>
-        <button role="tab" class="tabbtn" id="tab-whitepaper" aria-selected="false" aria-controls="whitepaper" data-tab="whitepaper">White Paper</button>
-      </div>
-
-      <!-- Panels -->
-      <div class="panel active" id="tech" role="tabpanel" aria-labelledby="tab-tech" tabindex="0">
-        <div class="grid-2">
-          <div>
-            <h3>Privacy &amp; Protocol</h3>
-            <ul>
-              <li><strong>SHIELD (Sapling/zk-SNARKs):</strong> optional privacy for amounts &amp; receivers.</li>
-              <li><strong>Consensus:</strong> Proof-of-Stake v3 with ~60s blocks.</li>
-              <li><strong>Network:</strong> Full nodes + Masternodes provide services and resilience.</li>
-              <li><strong>Wallet:</strong> Qt desktop with encrypt/backup, unlock-for-staking, rich history.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Developer Stack</h3>
-            <ul>
-              <li>Core C++/Qt: <a href="https://github.com/dogecash/dogecash" target="_blank" rel="noopener noreferrer">dogecash/dogecash</a></li>
-              <li>Explorer (JS+Mongo): <a href="https://github.com/dogecash/dogecash-explorer" target="_blank" rel="noopener noreferrer">dogecash-explorer</a></li>
-              <li>Web Wallet: <a href="https://github.com/dogecash/dogecash-web-wallet" target="_blank" rel="noopener noreferrer">dogecash-web-wallet</a></li>
-              <li>Electrum Server (Rust): <a href="https://github.com/dogecash/electrs-dogecash" target="_blank" rel="noopener noreferrer">electrs-dogecash</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel" id="staking" role="tabpanel" aria-labelledby="tab-staking" tabindex="-1">
-        <div class="grid-2">
-          <div>
-            <h3>How Staking Works</h3>
-            <ul>
-              <li>Encrypt wallet → Unlock <strong>for staking only</strong>.</li>
-              <li>Keep wallet online &amp; fully synced; rewards are probabilistic.</li>
-              <li>Coins must mature; moving coins resets coin-age.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Checklist</h3>
-            <ul>
-              <li>✔ Full sync</li>
-              <li>✔ Backup <code>wallet.dat</code></li>
-              <li>✔ Staking icon active</li>
-              <li>✔ Stable connection</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel" id="masternodes" role="tabpanel" aria-labelledby="tab-masternodes" tabindex="-1">
-        <div class="grid-2">
-          <div>
-            <h3>What They Do</h3>
-            <ul>
-              <li>Provide network services &amp; governance voting.</li>
-              <li>Improve uptime and stability.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>High-Level Setup</h3>
-            <ol>
-              <li>Prepare collateral address in controller wallet.</li>
-              <li>Run <code>dogecashd</code> on a VPS with static IP.</li>
-              <li>Create <code>masternode.conf</code>, start from controller wallet.</li>
-              <li>Monitor with <code>dogecash-cli masternode status</code>.</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel" id="gov" role="tabpanel" aria-labelledby="tab-gov" tabindex="-1">
-        <div class="grid-2">
-          <div>
-            <h3>DAO Process</h3>
-            <ul>
-              <li>Publish proposals (scope/budget/milestones).</li>
-              <li>Masternodes vote on-chain.</li>
-              <li>Treasury pays approved work.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Transparency Rules</h3>
-            <ul>
-              <li>Community multisig treasury wallets.</li>
-              <li>Monthly public reports &amp; signer rotation.</li>
-              <li>Open notes &amp; GitHub issues for proposals.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel" id="econ" role="tabpanel" aria-labelledby="tab-econ" tabindex="-1">
-        <div class="grid-2">
-          <div>
-            <h3>Specs</h3>
-            <ul>
-              <li>Algorithm: Quark • Block time: ~60s</li>
-              <li>Difficulty: retarget per block</li>
-              <li>Total supply: 21,000,000 DOGEC</li>
-              <li>Max supply: 210,000,000 DOGEC</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Incentives</h3>
-            <ul>
-              <li>Staking rewards for online, unlocked wallets.</li>
-              <li>Masternode rewards for uptime + governance.</li>
-              <li>DAO budget funds growth &amp; infrastructure.</li>
-            </ul>
-          </div>
-        </div>
-        <p class="muted">Circulating supply ~18.8M (live via dashboard/CG).</p>
-      </div>
-
-      <div class="panel" id="roadmap" role="tabpanel" aria-labelledby="tab-roadmap" tabindex="-1">
-        <div class="grid-2">
-          <div>
-            <h3>Q3–Q4 2025</h3>
-            <ul>
-              <li>Public block explorer &amp; API endpoints</li>
-              <li>Discord/X tipping bots</li>
-              <li>Community multisig treasury</li>
-              <li>Re-listing push on vetted exchanges/DEX bridges</li>
-            </ul>
-          </div>
-          <div>
-            <h3>2026</h3>
-            <ul>
-              <li>SHIELD UX hardening &amp; audits</li>
-              <li>Wallet UX: auto-updates, recovery flows</li>
-              <li>Mobile light clients (Electrum)</li>
-            </ul>
-          </div>
-        </div>
-        <p class="muted">Roadmap is community-driven via DAO votes.</p>
-      </div>
-
-      <div class="panel" id="faq" role="tabpanel" aria-labelledby="tab-faq" tabindex="-1">
-        <details><summary><strong>Is DogeCash a token?</strong></summary><p>No — DOGEC is a native coin with its own blockchain (not an ERC-20 token).</p></details>
-        <details><summary><strong>Where do I get the wallet?</strong></summary><p>From the official GitHub releases. Use the OS auto-detect button and verify SHA256.</p></details>
-        <details><summary><strong>How do I stake?</strong></summary><p>Encrypt, then unlock “for staking only,” keep the wallet online and synced.</p></details>
-        <details><summary><strong>How is the treasury protected?</strong></summary><p>Community multisig, public reports, open voting, and no single-party custody.</p></details>
-      </div>
-
-      <div class="panel" id="whitepaper" role="tabpanel" aria-labelledby="tab-whitepaper" tabindex="-1">
-        <div class="grid-2">
-          <div>
-            <h3>DogeCash White Paper</h3>
-            <p>View the complete DogeCash white paper below or download it for offline reading.</p>
-            <p><a class="btn" href="DogeCash_WhitePaper.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a></p>
-          </div>
-          <div>
-            <iframe class="whitepaper-frame" src="DogeCash_WhitePaper.pdf" width="100%" height="500" title="DogeCash White Paper" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== GETTING STARTED ===== -->
-    <section aria-labelledby="start-here-h" class="card" id="start-here">
-      <h2 id="start-here-h">Start Here</h2>
-      <ol class="gs-steps">
-        <li>
-          <h3>1) Download the Wallet</h3>
-          <p>Use the button above (“Download for Your OS”).</p>
-        </li>
-        <li>
-          <h3>2) Verify the Checksum</h3>
-          <details>
-            <summary>Show commands for Windows / macOS / Linux</summary>
-            <div class="grid-3">
-              <div><strong>Windows (PowerShell)</strong><pre><code>Get-FileHash .\dogecash-5.5.1-win64.zip -Algorithm SHA256</code></pre></div>
-              <div><strong>macOS</strong><pre><code>shasum -a 256 dogecash-5.5.1-osx-unsigned.dmg</code></pre></div>
-              <div><strong>Linux</strong><pre><code>sha256sum dogecash-5.5.1-x86_64-linux-gnu.tar.gz</code></pre></div>
-            </div>
-            <p class="muted">Compare output with the hashes in the Downloads section.</p>
-          </details>
-        </li>
-        <li>
-          <h3>3) Get Your First DOGEC</h3>
-          <p>Acquire on a listed exchange (see Markets), then withdraw to your wallet.</p>
-        </li>
-        <li>
-          <h3>4) Stake or Run a Masternode</h3>
-          <p>Open the wallet → Encrypt → Unlock <em>for staking only</em>. For masternodes, follow the Learn → Masternodes setup.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ===== TUTORIALS ===== -->
-    <section aria-labelledby="tutorials-h" class="card" id="tutorials">
-      <h2 id="tutorials-h">Video Tutorials</h2>
-      <div class="grid-2">
-        <div class="tutorial-card">
-          <img alt="Tutorial coming soon: Install &amp; Verify" class="ph" loading="lazy" src="assets/tutorial-install.svg"/>
-          <div class="bar">
-            <span>Install &amp; Verify</span>
-            <button class="btn-mini" data-tutorial="install" type="button">Play</button>
-          </div>
-        </div>
-        <div class="tutorial-card">
-          <img alt="Tutorial coming soon: Staking Basics" class="ph" loading="lazy" src="assets/tutorial-stake.svg"/>
-          <div class="bar">
-            <span>Staking Basics</span>
-            <button class="btn-mini" data-tutorial="stake" type="button">Play</button>
-          </div>
-        </div>
-      </div>
-      <p class="muted">Videos coming soon. For now, the buttons show a quick note.</p>
-    </section>
-
-    <!-- ===== MEMES ===== -->
-    <section aria-labelledby="memes-h" class="card" id="memes">
-      <h2 id="memes-h">Community Memes</h2>
-      <p class="muted">Want your meme featured? Share it in Discord — we periodically add the best here.</p>
-      <div class="meme-grid" id="memeGrid" aria-live="polite"></div>
-    </section>
-
-    <!-- ===== BLOG ===== -->
-    <section aria-labelledby="blog-h" class="card" id="blog">
-      <h2 id="blog-h">Blog &amp; Updates</h2>
-      <div class="blog-list" id="blogList">
-        <div class="muted">Loading posts…</div>
-      </div>
-      <p class="api-status" id="blogStatus">Fetching posts…</p>
-
-      <!-- Blog fallback data -->
-      <script id="blog-inline" type="application/json">
+</p>
+<p class="muted"><small>
+            All assets:
+            <a href="https://github.com/dogecash/dogecash/releases/tag/5.5.1" id="allAssetsLink" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">GitHub Release</a>
+</small></p>
+<div aria-label="Quick links (downloads)" class="btn-row">
+<a class="btn-ghost" href="https://github.com/dogecash/dogecash/releases" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">GitHub Releases</a>
+<a class="btn-ghost" href="https://www.coingecko.com/en/coins/dogecash" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">CoinGecko</a>
+<a class="btn-ghost" href="https://coinmarketcap.com/currencies/dogecash/" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">CoinMarketCap</a>
+</div>
+<details>
+<summary><strong>SHA256 Checksums</strong> (click a hash to copy)</summary>
+<table class="table" id="shaTable">
+<thead><tr><th>File</th><th>SHA256</th></tr></thead>
+<tbody>
+<tr><td>dogecash-5.5.1-win64.zip</td><td class="muted">5E470328EE68750A2F6E86F75C83CECAEAC2AD973F5573B83DCB6E3156A91591</td></tr>
+<tr><td>dogecash-5.5.1-osx-unsigned.dmg</td><td class="muted">A9B2E0AB2F72476CCF5CDB4746ADF9C9D1399321E8E6C02B5F6F47CC924D59B2</td></tr>
+<tr><td>dogecash-5.5.1-x86_64-linux-gnu.tar.gz</td><td class="muted">DEAB49107E8930148E24BB922B3BEF6F009E3709D425619FF0044D121D7A02EF</td></tr>
+</tbody>
+</table>
+</details>
+</div>
+<div>
+<h3>Live Price</h3>
+<div aria-live="polite" class="kv">
+<div class="pill"><strong>USD</strong><div id="p_usd">—</div></div>
+<div class="pill"><strong>24h</strong><div id="p_ch">—</div></div>
+<div class="pill"><strong>Market Cap</strong><div id="p_mcap">—</div></div>
+<div class="pill"><strong>24h Volume</strong><div id="p_vol">—</div></div>
+<div class="pill"><strong>Circulating</strong><div id="p_circ">—</div></div>
+</div>
+<p class="api-status" id="priceStatus">Fetching price…</p>
+<p class="muted">Source: CoinGecko • <a href="https://www.coingecko.com/en/coins/dogecash" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">View on CoinGecko</a></p>
+</div>
+</div>
+</section><section aria-labelledby="convert-heading" class="card" id="convert"><h2 id="convert-heading">Convert Cryptocurrency</h2><p class="muted">Select a cryptocurrency and fiat currency, enter an amount, and see the conversion instantly.</p><div aria-label="Conversion form" class="share-row" role="group">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 12px;">
+<div class="input-wrap" data-suffix="">
+<select class="btn-ghost" id="cryptoSelect">
+<option value="dogec">DOGEC</option>
+<option value="btc">BTC</option>
+<option value="eth">ETH</option>
+<option value="ltc">LTC</option>
+</select>
+<input aria-label="Enter amount" class="btn-ghost" id="cryptoAmount" min="0" placeholder="Enter amount" step="any" type="number"/>
+</div>
+<div class="input-wrap" data-suffix="">
+<select class="btn-ghost" id="fiatSelect">
+<option value="usd">USD</option>
+<option value="eur">EUR</option>
+<option value="gbp">GBP</option>
+<option value="cad">CAD</option>
+<option value="aud">AUD</option>
+</select>
+<input aria-label="Enter amount" class="btn-ghost" id="fiatAmount" min="0" placeholder="Enter amount" step="any" type="number"/>
+</div>
+<button class="btn" id="refreshPrice" type="button">Refresh Price</button>
+</div>
+</div><p class="api-status" id="convertStatus">Converter ready.</p></section>
+<!-- SHARE -->
+<section aria-labelledby="share-heading" class="card" id="share">
+<h2 id="share-heading">Share DOGECASH</h2>
+<p class="muted">Spread the word. Links use your current page &amp; title and respect your device’s native share where supported.</p>
+<div aria-label="Share buttons" class="share-row" role="group">
+<a aria-label="Share on Facebook" class="btn-ghost" href="#" id="share-facebook" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M22 12.06C22 6.49 17.52 2 11.95 2S2 6.49 2 12.06c0 5.01 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.19 2.24.19v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.77l-.44 2.91h-2.33V22c4.78-.78 8.44-4.93 8.44-9.94Z" fill="currentColor"></path></svg>
+<span>Facebook</span>
+</a>
+<a aria-label="Share on X (Twitter)" class="btn-ghost" href="#" id="share-twitter" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.8 10.7 20.9 2h-2.5l-6 7.2L8 2H2l7.6 11.2L2.6 22h2.5l6.5-7.8 4.7 7.8H22l-8.2-11.3Zm-2.3 2.8-.76-1.12L5 3.7h2.1l4.1 6 .76 1.12 6.1 8.9h-2.1l-4.46-6.02Z" fill="currentColor"></path></svg>
+<span>Share on X</span>
+</a>
+<a aria-label="Open Instagram profile" class="btn-ghost" href="https://instagram.com/" id="share-instagram" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.75-3A1.25 1.25 0 1 1 16.5 7.75 1.25 1.25 0 0 1 17.75 6.5Z" fill="currentColor"></path></svg>
+<span>Instagram</span>
+</a>
+<a aria-label="Open TikTok profile" class="btn-ghost" href="https://www.tiktok.com/" id="share-tiktok" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15 3c.6 1.8 2 3.2 3.8 3.8V10a7 7 0 1 1-7-7h3.2Z" fill="currentColor"></path></svg>
+<span>TikTok</span>
+</a>
+<a aria-label="Share on Telegram" class="btn-ghost" href="#" id="share-telegram" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21.5 3.5 2.7 10.8c-1 .4-.9 1.8.2 2L8.7 14l8.7-7.9c.2-.2.6.1.4.3L10 15.2v4.6c0 1.1 1.3 1.6 2.1.9l3.2-2.8 3.9 1.3c.9.3 1.8-.3 2-1.2l2.3-12.6c.2-1-.7-1.8-1.6-1.5Z" fill="currentColor"></path></svg>
+<span>Telegram</span>
+</a>
+<a aria-label="Share on WhatsApp" class="btn-ghost" href="#" id="share-whatsapp" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20 3.9A10 10 0 0 0 3.6 17.6L3 21l3.5-.9A10 10 0 1 0 20 3.9Zm-8 .9a8.1 8.1 0 0 1 6.2 13.2c-.3.4-.9.5-1.4.3-.8-.3-1.8-.6-2.7-1-2.9-1.3-5.1-3.5-6.4-6.4-.4-.9-.7-1.9-1-2.7-.2-.5 0-1.1.3-1.4A8.1 8.1 0 0 1 12 4.8Z" fill="currentColor"></path></svg>
+<span>WhatsApp</span>
+</a>
+</div>
+</section>
+<!-- MARKETS -->
+<section aria-labelledby="markets-h" class="card" id="markets">
+<h2 id="markets-h">Where to Trade DOGEC (Live)</h2>
+<div class="notice muted" id="marketsNote">Data via CoinGecko tickers. Always verify liquidity, spreads, and official communities before trading. Ensure the pair symbol is DOGEC (not DOGE). Not financial advice.</div>
+<div aria-label="Quick links (markets)" class="btn-row">
+<a class="btn" href="https://stakecube.net/app/exchange/dogec_btc" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">StakeCube: DOGEC/BTC</a>
+<a class="btn-ghost" href="https://www.coingecko.com/en/coins/dogecash#markets" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">CoinGecko Markets</a>
+<a class="btn-ghost" href="https://coinmarketcap.com/currencies/dogecash/markets/" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">CMC Markets</a>
+</div>
+<div class="table-container"><table aria-describedby="marketsNote" class="table" id="marketsTable" role="table">
+<caption class="visually-hidden">Live market pairs from CoinGecko</caption>
+<thead>
+<tr><th>Exchange</th><th>Pair</th><th>Price</th><th>Spread</th><th>Trust</th><th>Link</th></tr>
+</thead>
+<tbody aria-busy="true" aria-live="polite">
+<tr><td class="muted" colspan="6">Loading live markets…</td></tr>
+</tbody>
+</table></div>
+<p class="api-status" id="marketsStatus">Fetching markets…</p>
+</section>
+<!-- WALLET PREVIEW -->
+<section aria-labelledby="wallet-h" class="card" id="wallet">
+<h2 id="wallet-h">Wallet Preview</h2>
+<div class="grid-2">
+<div class="img-frame">
+<img alt="Dogecash Desktop Wallet Preview" fetchpriority="low" height="768" id="walletImg" loading="lazy" src="assets/DogecashWalletPreview.png" width="1365"/>
+</div>
+<div>
+<ul>
+<li><strong>Proof-of-Stake</strong> with unlock-for-staking-only</li>
+<li><strong>Masternodes</strong> &amp; DAO voting</li>
+<li><strong>Transaction history</strong> with filters &amp; memos</li>
+<li><strong>Backups</strong> &amp; wallet encryption</li>
+<li><strong>Diagnostics</strong> &amp; version info</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SPECS -->
+<section aria-labelledby="specs-h" class="card" id="specs">
+<h2 id="specs-h">Coin Specifications</h2>
+<div class="grid-3">
+<div class="pill"><strong>Algorithm</strong><div>Quark</div></div>
+<div class="pill"><strong>Block Time</strong><div>~60 sec</div></div>
+<div class="pill"><strong>Difficulty</strong><div>Retarget every block</div></div>
+<div class="pill"><strong>Total Supply</strong><div>21,000,000 DOGEC</div></div>
+<div class="pill"><strong>Max Supply</strong><div>210,000,000 DOGEC</div></div>
+<div class="pill"><strong>Privacy</strong><div>SHIELD (zk-SNARKs)</div></div>
+</div>
+<p class="muted">Circulating supply is ~18.8M (live via dashboard/CG).</p>
+</section>
+<!-- LEARN (tabs) -->
+<section aria-labelledby="learn-h" class="card" id="learn">
+<h2 id="learn-h">Learn DOGEC</h2>
+<div aria-label="Learn tabs" aria-orientation="horizontal" class="tabs" id="learnTabs" role="tablist">
+<button aria-controls="tech" aria-selected="true" class="tabbtn active" data-tab="tech" id="tab-tech" role="tab">Technology</button>
+<button aria-controls="staking" aria-selected="false" class="tabbtn" data-tab="staking" id="tab-staking" role="tab">Staking</button>
+<button aria-controls="masternodes" aria-selected="false" class="tabbtn" data-tab="masternodes" id="tab-masternodes" role="tab">Masternodes</button>
+<button aria-controls="gov" aria-selected="false" class="tabbtn" data-tab="gov" id="tab-gov" role="tab">Governance</button>
+<button aria-controls="econ" aria-selected="false" class="tabbtn" data-tab="econ" id="tab-econ" role="tab">Economics</button>
+<button aria-controls="roadmap" aria-selected="false" class="tabbtn" data-tab="roadmap" id="tab-roadmap" role="tab">Roadmap</button>
+<button aria-controls="faq" aria-selected="false" class="tabbtn" data-tab="faq" id="tab-faq" role="tab">FAQ</button>
+<button aria-controls="whitepaper" aria-selected="false" class="tabbtn" data-tab="whitepaper" id="tab-whitepaper" role="tab">White Paper</button>
+</div>
+<!-- Panels -->
+<div aria-labelledby="tab-tech" class="panel active" id="tech" role="tabpanel" tabindex="0">
+<div class="grid-2">
+<div>
+<h3>Privacy &amp; Protocol</h3>
+<ul>
+<li><strong>SHIELD (Sapling/zk-SNARKs):</strong> optional privacy for amounts &amp; receivers.</li>
+<li><strong>Consensus:</strong> Proof-of-Stake v3 with ~60s blocks.</li>
+<li><strong>Network:</strong> Full nodes + Masternodes provide services and resilience.</li>
+<li><strong>Wallet:</strong> Qt desktop with encrypt/backup, unlock-for-staking, rich history.</li>
+</ul>
+</div>
+<div>
+<h3>Developer Stack</h3>
+<ul>
+<li>Core C++/Qt: <a href="https://github.com/dogecash/dogecash" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">dogecash/dogecash</a></li>
+<li>Explorer (JS+Mongo): <a href="https://github.com/dogecash/dogecash-explorer" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">dogecash-explorer</a></li>
+<li>Web Wallet: <a href="https://github.com/dogecash/dogecash-web-wallet" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">dogecash-web-wallet</a></li>
+<li>Electrum Server (Rust): <a href="https://github.com/dogecash/electrs-dogecash" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">electrs-dogecash</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div aria-labelledby="tab-staking" class="panel" id="staking" role="tabpanel" tabindex="-1">
+<div class="grid-2">
+<div>
+<h3>How Staking Works</h3>
+<ul>
+<li>Encrypt wallet → Unlock <strong>for staking only</strong>.</li>
+<li>Keep wallet online &amp; fully synced; rewards are probabilistic.</li>
+<li>Coins must mature; moving coins resets coin-age.</li>
+</ul>
+</div>
+<div>
+<h3>Checklist</h3>
+<ul>
+<li>✔ Full sync</li>
+<li>✔ Backup <code>wallet.dat</code></li>
+<li>✔ Staking icon active</li>
+<li>✔ Stable connection</li>
+</ul>
+</div>
+</div>
+</div>
+<div aria-labelledby="tab-masternodes" class="panel" id="masternodes" role="tabpanel" tabindex="-1">
+<div class="grid-2">
+<div>
+<h3>What They Do</h3>
+<ul>
+<li>Provide network services &amp; governance voting.</li>
+<li>Improve uptime and stability.</li>
+</ul>
+</div>
+<div>
+<h3>High-Level Setup</h3>
+<ol>
+<li>Prepare collateral address in controller wallet.</li>
+<li>Run <code>dogecashd</code> on a VPS with static IP.</li>
+<li>Create <code>masternode.conf</code>, start from controller wallet.</li>
+<li>Monitor with <code>dogecash-cli masternode status</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div aria-labelledby="tab-gov" class="panel" id="gov" role="tabpanel" tabindex="-1">
+<div class="grid-2">
+<div>
+<h3>DAO Process</h3>
+<ul>
+<li>Publish proposals (scope/budget/milestones).</li>
+<li>Masternodes vote on-chain.</li>
+<li>Treasury pays approved work.</li>
+</ul>
+</div>
+<div>
+<h3>Transparency Rules</h3>
+<ul>
+<li>Community multisig treasury wallets.</li>
+<li>Monthly public reports &amp; signer rotation.</li>
+<li>Open notes &amp; GitHub issues for proposals.</li>
+</ul>
+</div>
+</div>
+</div>
+<div aria-labelledby="tab-econ" class="panel" id="econ" role="tabpanel" tabindex="-1">
+<div class="grid-2">
+<div>
+<h3>Specs</h3>
+<ul>
+<li>Algorithm: Quark • Block time: ~60s</li>
+<li>Difficulty: retarget per block</li>
+<li>Total supply: 21,000,000 DOGEC</li>
+<li>Max supply: 210,000,000 DOGEC</li>
+</ul>
+</div>
+<div>
+<h3>Incentives</h3>
+<ul>
+<li>Staking rewards for online, unlocked wallets.</li>
+<li>Masternode rewards for uptime + governance.</li>
+<li>DAO budget funds growth &amp; infrastructure.</li>
+</ul>
+</div>
+</div>
+<p class="muted">Circulating supply ~18.8M (live via dashboard/CG).</p>
+</div>
+<div aria-labelledby="tab-roadmap" class="panel" id="roadmap" role="tabpanel" tabindex="-1">
+<div class="grid-2">
+<div>
+<h3>Q3–Q4 2025</h3>
+<ul>
+<li>Public block explorer &amp; API endpoints</li>
+<li>Discord/X tipping bots</li>
+<li>Community multisig treasury</li>
+<li>Re-listing push on vetted exchanges/DEX bridges</li>
+</ul>
+</div>
+<div>
+<h3>2026</h3>
+<ul>
+<li>SHIELD UX hardening &amp; audits</li>
+<li>Wallet UX: auto-updates, recovery flows</li>
+<li>Mobile light clients (Electrum)</li>
+</ul>
+</div>
+</div>
+<p class="muted">Roadmap is community-driven via DAO votes.</p>
+</div>
+<div aria-labelledby="tab-faq" class="panel" id="faq" role="tabpanel" tabindex="-1">
+<details><summary><strong>Is DogeCash a token?</strong></summary><p>No — DOGEC is a native coin with its own blockchain (not an ERC-20 token).</p></details>
+<details><summary><strong>Where do I get the wallet?</strong></summary><p>From the official GitHub releases. Use the OS auto-detect button and verify SHA256.</p></details>
+<details><summary><strong>How do I stake?</strong></summary><p>Encrypt, then unlock “for staking only,” keep the wallet online and synced.</p></details>
+<details><summary><strong>How is the treasury protected?</strong></summary><p>Community multisig, public reports, open voting, and no single-party custody.</p></details>
+</div>
+<div aria-labelledby="tab-whitepaper" class="panel" id="whitepaper" role="tabpanel" tabindex="-1">
+<div class="grid-2">
+<div>
+<h3>DogeCash White Paper</h3>
+<p>View the complete DogeCash white paper below or download it for offline reading.</p>
+<p><a class="btn" href="DogeCash_WhitePaper.pdf" rel="noopener noreferrer" target="_blank">Download PDF</a></p>
+</div>
+<div>
+<iframe class="whitepaper-frame" height="500" loading="lazy" referrerpolicy="no-referrer" src="DogeCash_WhitePaper.pdf" title="DogeCash White Paper" width="100%"></iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- START HERE -->
+<section aria-labelledby="start-here-h" class="card" id="start-here">
+<h2 id="start-here-h">Start Here</h2>
+<ol class="gs-steps">
+<li>
+<h3>1) Download the Wallet</h3>
+<p>Use the button above (“Download for Your OS”).</p>
+</li>
+<li>
+<h3>2) Verify the Checksum</h3>
+<details>
+<summary>Show commands for Windows / macOS / Linux</summary>
+<div class="grid-3">
+<div><strong>Windows (PowerShell)</strong><pre><code>Get-FileHash .\dogecash-5.5.1-win64.zip -Algorithm SHA256</code></pre></div>
+<div><strong>macOS</strong><pre><code>shasum -a 256 dogecash-5.5.1-osx-unsigned.dmg</code></pre></div>
+<div><strong>Linux</strong><pre><code>sha256sum dogecash-5.5.1-x86_64-linux-gnu.tar.gz</code></pre></div>
+</div>
+<p class="muted">Compare output with the hashes in the Downloads section.</p>
+</details>
+</li>
+<li>
+<h3>3) Get Your First DOGEC</h3>
+<p>Acquire on a listed exchange (see Markets), then withdraw to your wallet.</p>
+</li>
+<li>
+<h3>4) Stake or Run a Masternode</h3>
+<p>Open the wallet → Encrypt → Unlock <em>for staking only</em>. For masternodes, follow the Learn → Masternodes setup.</p>
+</li>
+</ol>
+</section>
+<!-- TUTORIALS -->
+<section aria-labelledby="tutorials-h" class="card" id="tutorials">
+<h2 id="tutorials-h">Video Tutorials</h2>
+<div class="grid-2">
+<div class="tutorial-card">
+<img alt="Tutorial coming soon: Install &amp; Verify" class="ph" loading="lazy" src="assets/tutorial-install.svg"/>
+<div class="bar">
+<span>Install &amp; Verify</span>
+<button class="btn-mini" data-tutorial="install" type="button">Play</button>
+</div>
+</div>
+<div class="tutorial-card">
+<img alt="Tutorial coming soon: Staking Basics" class="ph" loading="lazy" src="assets/tutorial-stake.svg"/>
+<div class="bar">
+<span>Staking Basics</span>
+<button class="btn-mini" data-tutorial="stake" type="button">Play</button>
+</div>
+</div>
+</div>
+<p class="muted">Videos coming soon. For now, the buttons show a quick note.</p>
+</section>
+<!-- MEMES -->
+<section aria-labelledby="memes-h" class="card" id="memes">
+<h2 id="memes-h">Community Memes</h2>
+<p class="muted">Want your meme featured? Share it in Discord — we periodically add the best here.</p>
+<div aria-live="polite" class="meme-grid" id="memeGrid"></div>
+</section>
+<!-- BLOG -->
+<section aria-labelledby="blog-h" class="card" id="blog">
+<h2 id="blog-h">Blog &amp; Updates</h2>
+<div class="blog-list" id="blogList">
+<div class="muted">Loading posts…</div>
+</div>
+<p class="api-status" id="blogStatus">Fetching posts…</p>
+<!-- Blog fallback data -->
+<script nonce="ABC123" id="blog-inline" type="application/json">
         [
           {"title":"Relaunch Checklist — Week 1","summary":"Site live with downloads, live markets, Learn tabs, and theme toggle.","date":"2025-08-10"},
           {"title":"Next Up — Explorer & Tipping","summary":"Hosting public explorer endpoints and DOGEC tipping bots for Discord/X.","date":"2025-08-12"}
         ]
       </script>
-    </section>
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>
-      <img alt="Dogecash logo" class="tiny" height="18" id="tinyLogo" width="18"/>
+</section>
+</main>
+<!-- FOOTER -->
+<footer aria-label="Site footer">
+<p>
+<img alt="Dogecash logo" class="tiny" height="18" id="tinyLogo" src="data:image/svg+xml;utf8,&lt;?xml version='1.0'?&gt;&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' aria-hidden='true' role='img'&gt;&lt;defs&gt;&lt;linearGradient id='g' x1='0' x2='1' y1='0' y2='1'&gt;&lt;stop offset='0' stop-color='#6bdcff'/&gt;&lt;stop offset='1' stop-color='#ffb86b'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='64' height='64' rx='14' fill='#0b1220'/&gt;&lt;circle cx='32' cy='32' r='22' fill='url(#g)' opacity='0.25'/&gt;&lt;text x='32' y='38' font-family='system-ui,Segoe UI,Roboto,Arial' font-size='14' text-anchor='middle' fill='#e6eef6'&gt;DOGEC&lt;/text&gt;&lt;/svg&gt;" width="18"/>
       Join the community:
-      <a href="https://discord.gg/your-invite" target="_blank" rel="noopener noreferrer">Discord</a>
-    </p>
-    <p class="muted">
-      © 2025 DogeCash Community — Always verify downloads and addresses before transacting.
-    </p>
-  </footer>
-
-  <!-- ===== SCRIPTS ===== -->
-
-  <!-- Particles.js (allowed by CSP) -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-
-  <!-- App logic -->
-  <script>
+      <a href="https://discord.gg/your-invite" referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">Discord</a>
+</p>
+<p class="muted">© 2025 DogeCash Community — Always verify downloads and addresses before transacting.</p>
+<div style="text-align:left; margin:16px auto; max-width: 1000px">
+<details class="notice" id="legal-disclaimers" open="">
+<summary><strong>Legal &amp; Disclaimers</strong></summary>
+<p><strong>Legal Notice.</strong> This website is provided for informational purposes only and does <em>not</em> constitute financial, investment, legal, or tax advice, and is <em>not</em> an offer to sell or a solicitation of an offer to buy any security, commodity, or financial instrument. Digital assets are volatile and may lose value. Do your own research and consult qualified professionals. Access to this site may be restricted by law in certain jurisdictions; you are responsible for compliance with local rules.</p>
+<p><strong>Third‑Party Links.</strong> Links to exchanges, APIs, wallets, and social platforms are provided for convenience. We do not control, endorse, or assume responsibility for any third‑party content, services, or risks. Trading or transacting through third parties is at your own risk. Always verify that exchange pairs reference <strong>DOGEC</strong> (and not <strong>DOGE</strong>).</p>
+<p><strong>Affiliations &amp; Trademarks.</strong> DogeCash is <em>not affiliated</em> with Dogecoin®, Discord®, Microsoft®, Apple®, CoinGecko®, Brave®, or any other referenced brands. All trademarks are the property of their respective owners. “Inspired by” visual references are descriptive only and do not imply endorsement.</p>
+<p><strong>Privacy.</strong> This site stores minimal settings locally (e.g., theme preference via <code>localStorage</code>) and fetches public market data from CoinGecko. We do not collect personal information through this site. When you use sharing links or visit third‑party sites, their privacy policies apply.</p>
+<p><strong>Accuracy.</strong> Market prices, supplies, and other metrics shown here are approximate and may change. Sources include CoinGecko and public blockchain explorers. Verify independently before acting.</p>
+<p><strong>Community Content.</strong> If/when user submissions are enabled (e.g., memes), submitters must hold necessary rights. For takedowns, contact community moderators via Discord.</p>
+</details>
+<p class="muted"><em>DogeCash is not affiliated with Dogecoin®.</em></p>
+</div>
+</footer>
+<!-- ===== SCRIPTS ===== -->
+<!-- App logic -->
+<script nonce="ABC123" type="text/javascript">
     // ===== Version / assets =====
     const VERSION = '5.5.1';
-    const LOGO_SRC   = "";   // optional data: URL
-    const WALLET_SRC = "";   // optional data: URL
+    const LOGO_SRC   = 'assets/DogecashLogo.png';   // progressive candidate
+    const WALLET_SRC = "";                           // optional candidate
     const FALLBACK_SVG = encodeURIComponent(`
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' aria-hidden='true' role='img'>
         <defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'>
@@ -734,7 +1269,7 @@
     async function getJSON(url, { ttlMs = 60_000, key = url, retries = 1, backoffMs = 800 } = {}) {
       const now = Date.now();
       try { const cached = JSON.parse(sessionStorage.getItem(key) || 'null'); if (cached && (now - cached.t) < ttlMs) return cached.v; } catch {}
-      let lastErr;
+      let lastErr = null;
       for (let attempt = 0; attempt <= retries; attempt++) {
         const ac = new AbortController(); const to = setTimeout(()=>ac.abort(), 12000);
         try {
@@ -742,10 +1277,10 @@
           if (!r.ok) throw new Error('HTTP '+r.status);
           const v = await r.json(); try { sessionStorage.setItem(key, JSON.stringify({ t: now, v })); } catch {}
           clearTimeout(to); return v;
-        } catch (e) { lastErr = e; clearTimeout(to); if (attempt < retries) await delay(backoffMs * (attempt+1)); }
+        } catch (e) { console.warn('Caught error:', e); lastErr = e; if (attempt < retries) { try { await delay(backoffMs * (attempt + 1)); } catch {} } }
       }
       try { const cached = JSON.parse(sessionStorage.getItem(key) || 'null'); if (cached) return cached.v; } catch {}
-      throw lastErr;
+      throw lastErr || new Error('Request failed');
     }
 
     // ===== Progressive images + favicon =====
@@ -757,6 +1292,7 @@
       const logoCandidates = [
         LOGO_SRC && LOGO_SRC.startsWith('data:') ? LOGO_SRC : "",
         'assets/DogecashLogo.png',
+        'assets/DogeCashLogoFlat.png',
         OG_IMAGE,
         PLACEHOLDER_DATA_SVG
       ];
@@ -780,6 +1316,7 @@
       fav.type = 'image/png';
       fav.href = pickSrc(
         (logoSrc && logoSrc.startsWith('data:')) ? logoSrc : "",
+        'assets/DogeCashLogoFlat.png',
         'assets/DogecashLogo.png',
         OG_IMAGE,
         PLACEHOLDER_DATA_SVG
@@ -864,7 +1401,7 @@
     })();
 
     // ===== CoinGecko dashboard + markets =====
-    const SAVE_DATA = navigator.connection?.saveData === true;
+    // Removed unused: SAVE_DATA
     const base='https://api.coingecko.com/api/v3', id='dogecash';
     const fmtUSD = (n, {maxFrac=4}={}) => (n==null ? '—' : new Intl.NumberFormat(undefined, { style:'currency', currency:'USD', maximumFractionDigits:maxFrac }).format(n));
     const fmtNum = (n, {maxFrac=2}={}) => (n==null ? '—' : new Intl.NumberFormat(undefined, { maximumFractionDigits:maxFrac }).format(n));
@@ -899,15 +1436,12 @@
         if(circEl) circEl.textContent = circ!=null ? (fmtNum(Number(circ))+' DOGEC') : '—';
 
         setStatus('priceStatus','Live price loaded.');
-      }catch(e){
-        console.warn('Dashboard load failed', e);
-        setStatus('priceStatus','Could not load price (rate limit or offline). Showing placeholders.', true);
-      }
+      } catch (e) { console.warn('Caught error:', e); }
     }
 
     function trustBadge(score){ const s=(score||'').toLowerCase(); return `<span class="trust-badge ${s}">${score ? s : '—'}</span>`; }
     function ensureStakeCubeRows(tbody){
-      const urlBTC = "https://stakecube.net/app/exchange/doge_btc";
+      const urlBTC = "https://stakecube.net/app/exchange/dogec_btc";
       const hasRow = Array.from(tbody.querySelectorAll('tr')).some(tr => tr.textContent.toLowerCase().includes('stakecube'));
       if (!hasRow) tbody.insertAdjacentHTML("beforeend", `<tr><td>StakeCube</td><td>DOGEC/BTC</td><td>—</td><td>—</td><td>${trustBadge('')}</td><td><a href="${urlBTC}" target="_blank" rel="noopener noreferrer">Trade</a></td></tr>`);
     }
@@ -948,22 +1482,18 @@
           setStatus('marketsStatus','Live markets loaded.');
         }
         if (note) note.textContent = 'Data via CoinGecko tickers. Always verify liquidity, spreads, and official communities before trading.';
-      }catch(e){
-        console.warn('Markets load failed', e);
-        tbody.innerHTML='<tr><td colspan="6" class="muted">Failed to load from CoinGecko. Try again shortly.</td></tr>';
-        setStatus('marketsStatus','Could not load markets (rate limit or offline). Showing fallback.', true);
-      } finally {
+      } catch (e) { console.warn('Caught error:', e); } finally {
         tbody.setAttribute('aria-busy','false');
-        try { ensureStakeCubeRows(tbody); } catch(e) {}
+        try { ensureStakeCubeRows(tbody); } catch (e) { console.warn('Caught error:', e); }
       }
     }
 
-    // Polling control with Save-Data friendliness
+    // Polling control
     let priceInterval, marketsInterval;
     function startPolling() {
       stopPolling(); loadDashboard(); loadMarkets();
-      const priceMs = SAVE_DATA ? 300000 : 180000;
-      const marketMs = SAVE_DATA ? 420000 : 300000;
+      const priceMs = 180000;
+      const marketMs = 300000;
       priceInterval = setInterval(loadDashboard, priceMs);
       marketsInterval = setInterval(loadMarkets, marketMs);
     }
@@ -972,7 +1502,7 @@
     window.addEventListener('online',  () => { setStatus('priceStatus','Back online. Refreshing…'); startPolling(); });
     window.addEventListener('offline', () => { setStatus('priceStatus','You are offline. Live data paused.', true); stopPolling(); });
     if (navigator.onLine) startPolling();
-    setInterval(()=>{ const tb=q('#marketsTable tbody'); if(tb){ try{ ensureStakeCubeRows(tb); }catch(e){} } }, 15000);
+    setInterval(()=>{ const tb=q('#marketsTable tbody'); if(tb){ try{ ensureStakeCubeRows(tb); } catch (e) { console.warn('Caught error:', e); } } }, 15000);
 
     // ===== Blog loader =====
     function timeAgo(dateStr) {
@@ -996,11 +1526,11 @@
         const blogUrl = new URL('blog.json', window.location.href).toString();
         const posts=await getJSON(blogUrl, { ttlMs: 300_000 });
         renderBlog(posts); setStatus('blogStatus','Posts loaded.'); return;
-      }catch(e){ console.warn('Blog JSON load failed', e); setStatus('blogStatus','Could not load posts. Showing fallback.', true); }
+      } catch (e) { console.warn('Caught error:', e); }
       try{
         const raw=q('#blog-inline')?.textContent || '[]'; const posts=JSON.parse(raw);
         renderBlog(posts); setStatus('blogStatus','Fallback posts shown.');
-      }catch(e){ list.innerHTML='<div class="muted">No posts yet.</div>'; setStatus('blogStatus','Could not parse fallback posts.', true); }
+      } catch (e) { console.warn('Caught error:', e); }
     }
     loadBlog();
 
@@ -1009,11 +1539,19 @@
       const cells = qa('#shaTable td:nth-child(2)');
       cells.forEach(td => {
         td.style.cursor='pointer'; td.title='Click to copy checksum'; td.setAttribute('role','button'); td.setAttribute('tabindex','0');
+        
         const copy = async () => {
           const text = td.textContent.trim();
-          try { await navigator.clipboard.writeText(text); td.classList.add('copied'); const prev=td.title; td.title='Copied!'; setTimeout(()=>{ td.classList.remove('copied'); td.title=prev; }, 900); }
-          catch { alert('Copy failed — please copy manually.'); }
+          try {
+            await navigator.clipboard.writeText(text);
+            const original = td.textContent;
+            td.textContent = 'Copied!';
+            setTimeout(() => { td.textContent = original; }, 1000);
+          } catch {
+            alert('Copy failed — please copy manually.');
+          }
         };
+
         td.addEventListener('click', copy);
         td.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); copy(); } });
       });
@@ -1063,7 +1601,7 @@
       document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
     })();
 
-    // ===== Particles init (after script loads) =====
+    // ===== Particles init (if already present) =====
     window.addEventListener('load', () => {
       if (window.particlesJS) {
         particlesJS("particles-js", {
@@ -1093,10 +1631,157 @@
 
     // ===== Service Worker (optional local file) =====
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js').catch(()=>{ /* no-op */ });
+  window.addEventListener('load', () => {
+    fetch('./service-worker.js', { method: 'HEAD' })
+      .then(r => { if (r.ok) navigator.serviceWorker.register('./service-worker.js'); })
+      .catch(()=>{});
+  });
+}
+
+    // ===== Hamburger toggle =====
+    (function(){
+      const btn = q('#hamburger'); const m = q('#mobileMenu');
+      if (!btn || !m) return;
+      btn.addEventListener('click', ()=>{
+        const open = m.style.display !== 'none';
+        m.style.display = open ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', String(!open));
       });
-    }
+    })();
+
+    // ===== Scroll progress =====
+    (function(){
+      const bar = q('#scrollProgress');
+      if (!bar) return;
+      const onScroll = () => {
+        const st = document.documentElement.scrollTop || document.body.scrollTop;
+        const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const pct = sh > 0 ? (st / sh) * 100 : 0;
+        bar.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // ===== Logo click: spin-once =====
+    document.addEventListener('DOMContentLoaded', () => {
+      const logo = document.getElementById('logoImg');
+      if (logo) {
+        logo.addEventListener('click', (e) => {
+          if (e.button === 0) {
+            logo.classList.remove('spin-once'); void logo.offsetWidth; logo.classList.add('spin-once');
+          }
+        });
+      }
+    });
   </script>
-</body>
+<script nonce="ABC123" type="text/javascript">
+// === Scroll-triggered fade-ins ===
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// === Copy feedback bubble ===
+document.querySelectorAll('#shaTable td:nth-child(2)').forEach(td => {
+  td.style.position = 'relative';
+  const bubble = document.createElement('div');
+  bubble.className = 'copy-feedback';
+  bubble.textContent = 'Copied!';
+  td.appendChild(bubble);
+
+  td.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(td.textContent.trim());
+      bubble.classList.add('show');
+      setTimeout(() => bubble.classList.remove('show'), 1000);
+    } catch {}
+  });
+});
+</script><script nonce="ABC123" type="text/javascript">
+(function(){
+  const q = (s, r=document) => r.querySelector(s);
+  // Removed unused: qa
+  const COIN_IDS = { dogec: 'dogecash', btc: 'bitcoin', eth: 'ethereum', ltc: 'litecoin' };
+  const DEFAULTS = { crypto: 'dogec', fiat: 'usd' };
+  const baseApi = (typeof base === 'string' && base) ? base : 'https://api.coingecko.com/api/v3';
+  const getJ = (typeof getJSON === 'function') ? getJSON : async function(url){ const r = await fetch(url, {cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); };
+  // Removed unused: fmtFiat
+  // Removed unused: fmtCrypto
+  
+  const selCrypto = q('#cryptoSelect');
+  const selFiat = q('#fiatSelect');
+  const inCrypto = q('#cryptoAmount');
+  const inFiat = q('#fiatAmount');
+  const btnRefresh = q('#refreshPrice');
+
+  function setPlaceholders(){
+    try {
+      if (inFiat) inFiat.setAttribute('placeholder', (selFiat.value || DEFAULTS.fiat).toUpperCase());
+      
+    } catch (e) { console.warn('Caught error:', e); }
+  }
+
+  const status = q('#convertStatus');
+
+  if (!selCrypto || !selFiat || !inCrypto || !inFiat) return;
+
+  let price = null; // price of 1 crypto in selected fiat
+  let lastEdit = 'crypto'; // track which side user edited last to avoid loop
+
+  async function fetchPrice() {
+    const c = (selCrypto.value || DEFAULTS.crypto).toLowerCase();
+    const f = (selFiat.value || DEFAULTS.fiat).toLowerCase();
+    const id = COIN_IDS[c] || COIN_IDS[DEFAULTS.crypto];
+    try {
+      status && (status.textContent = 'Fetching price…');
+      const data = await getJ(`${baseApi}/simple/price?ids=${encodeURIComponent(id)}&vs_currencies=${encodeURIComponent(f)}`);
+      price = Number(data?.[id]?.[f] ?? NaN);
+      if (!isFinite(price) || price <= 0) throw new Error('Bad price');
+      status && (status.textContent = '');
+      recalc();
+    } catch (e) { console.warn('Caught error:', e); }
+  }
+
+  function recalc(){
+    if (!isFinite(price) || price == null) return;
+    if (lastEdit === 'crypto') {
+      const v = parseFloat(inCrypto.value);
+      if (isFinite(v)) {
+        const out = v * price;
+        inFiat.value = out === 0 ? '' : (Math.round(out * 100) / 100).toString();
+      }
+    } else {
+      const v = parseFloat(inFiat.value);
+      if (isFinite(v)) {
+        const out = v / price;
+        // limit to 8 decimals to avoid huge strings
+        inCrypto.value = out === 0 ? '' : (Math.round(out * 1e8) / 1e8).toString();
+      }
+    }
+  }
+
+  // Wire events
+  selCrypto.addEventListener('change', () => { if (inFiat) inFiat.setAttribute('placeholder', (selFiat.value || DEFAULTS.fiat).toUpperCase()); fetchPrice(); });
+  selFiat.addEventListener('change', () => { if (inFiat) inFiat.setAttribute('placeholder', (selFiat.value || DEFAULTS.fiat).toUpperCase()); fetchPrice(); });
+  if (btnRefresh) btnRefresh.addEventListener('click', fetchPrice);
+
+  inCrypto.addEventListener('input', () => { lastEdit = 'crypto'; recalc(); });
+  inFiat.addEventListener('input', () => { lastEdit = 'fiat'; recalc(); });
+
+  if (inFiat) inFiat.setAttribute('placeholder', (selFiat.value || DEFAULTS.fiat).toUpperCase());
+  // Initialize defaults if empty
+  if (!selCrypto.value) selCrypto.value = DEFAULTS.crypto;
+  if (!selFiat.value) selFiat.value = DEFAULTS.fiat;
+
+  // Prime with a price
+  fetchPrice();
+})();
+</script></body>
 </html>
