@@ -1,0 +1,17 @@
+# Ignore OS/system files
+.DS_Store
+Thumbs.db
+
+# Node tools or build output (if used in future)
+node_modules/
+dist/
+build/
+
+# Ignore logs
+*.log
+
+# VS Code
+.vscode/
+
+# Optional: Ignore personal configs
+.env
